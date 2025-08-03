@@ -1,76 +1,428 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Dream Force</title>
-  <meta name="description" content="The Dream Force – A non-profit catalyzing a sovereign renaissance through community, creativity, and cosmic responsibility." />
-  <link rel="icon" href="/favicon.ico" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
-      color: white;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Metadata -->
+    <title>Dreamforce — Where Capability Becomes Relief</title>
+    <meta name="description" content="Dreamforce funds and delivers community projects with radical transparency. Donate, volunteer, or partner to turn resources into outcomes—fast.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamforce.org/">
+    <meta property="og:title" content="Dreamforce — Where Capability Becomes Relief">
+    <meta property="og:description" content="Dreamforce funds and delivers community projects with radical transparency. Donate, volunteer, or partner to turn resources into outcomes—fast.">
+    <meta property="og:image" content="https://placehold.co/1200x630/111827/ffffff?text=Dreamforce">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamforce.org/">
+    <meta property="twitter:title" content="Dreamforce — Where Capability Becomes Relief">
+    <meta property="twitter:description" content="Dreamforce funds and delivers community projects with radical transparency.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/111827/ffffff?text=Dreamforce">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; 
+            color: #111827;
+        }
+        /* Custom focus styles for accessibility */
+        :focus-visible {
+            outline: 3px solid #3b82f6; /* Keeping a standard blue for focus */
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Dreamforce",
+      "url": "https://dreamforce.org",
+      "logo": "https://dreamforce.org/logo.svg",
+      "description": "Dreamforce is a nonprofit building real-world outcomes through sovereign skills, community projects, and targeted micro-grants.",
+      "sameAs": [
+        "https://twitter.com/dreamforce",
+        "https://linkedin.com/company/dreamforce"
+      ]
     }
-    .glass {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DonateAction",
+      "name": "Donate to Dreamforce",
+      "recipient": {
+        "@type": "NGO",
+        "name": "Dreamforce"
+      },
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://dreamforce.org/donate"
+      }
     }
-    .gradient-text {
-      background: linear-gradient(90deg, #ff8a00, #e52e71);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
+    </script>
 </head>
-<body class="font-sans leading-relaxed tracking-wide overflow-x-hidden">
+<body class="antialiased">
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center text-center px-6">
-    <div class="absolute inset-0 bg-gradient-to-tr from-purple-900/50 via-indigo-800/50 to-blue-800/50 opacity-70 blur-3xl"></div>
-    <div class="relative z-10 max-w-4xl">
-      <h1 class="text-6xl md:text-7xl font-bold gradient-text drop-shadow-lg">The Dream Force</h1>
-      <p class="mt-6 text-lg md:text-xl text-gray-300">A movement. A memory. A mission encoded in myth.<br />We are the architects of a sovereign civilization.</p>
-      <a href="#vision" class="mt-10 inline-block px-6 py-3 border border-white/30 rounded-full text-white hover:bg-white/10 transition">Enter the Vision</a>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:px-4 focus:py-2 bg-white text-black font-semibold rounded-lg shadow-md">
+        Skip to content
+    </a>
+
+    <!-- Global Elements: Header -->
+    <header id="header" class="bg-[#D6EFFF] sticky top-0 z-40 transition-all duration-300 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-black">
+                    <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"></path></svg>
+                    <span>Dreamforce</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#work" class="text-gray-700 hover:text-black transition-colors">Our Work</a>
+                    <a href="#projects" class="text-gray-700 hover:text-black transition-colors">Projects</a>
+                    <a href="#impact" class="text-gray-700 hover:text-black transition-colors">Impact</a>
+                    <a href="#get-involved" class="text-gray-700 hover:text-black transition-colors">Get Involved</a>
+                    <a href="#about" class="text-gray-700 hover:text-black transition-colors">About</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#donate" class="bg-[#F5EEDF] text-black font-semibold px-5 py-2.5 rounded-lg hover:bg-[#EAE1C7] transition-all shadow-sm">Donate</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-black focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#D6EFFF] px-4 pt-2 pb-4 space-y-2 border-t border-gray-200">
+             <a href="#work" class="block text-gray-700 hover:text-black transition-colors py-2">Our Work</a>
+             <a href="#projects" class="block text-gray-700 hover:text-black transition-colors py-2">Projects</a>
+             <a href="#impact" class="block text-gray-700 hover:text-black transition-colors py-2">Impact</a>
+             <a href="#get-involved" class="block text-gray-700 hover:text-black transition-colors py-2">Get Involved</a>
+             <a href="#about" class="block text-gray-700 hover:text-black transition-colors py-2">About</a>
+            <a href="#donate" class="block w-full text-center mt-4 bg-[#F5EEDF] text-black font-semibold px-5 py-3 rounded-lg hover:bg-[#EAE1C7] transition-all shadow-sm">Donate</a>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Home: Hero Section -->
+        <section role="banner" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-black mt-2 mb-6 leading-tight">Turn capability into relief.</h1>
+                        <p class="text-lg md:text-xl text-gray-700 mb-8">Dreamforce turns community needs into finished outcomes. We fund, build, and verify projects with radical transparency—publishing budgets, progress, and proof so you always see where your gift goes.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#donate" class="bg-[#F5EEDF] text-black font-semibold px-8 py-4 rounded-lg hover:bg-[#EAE1C7] transition-all shadow-md text-lg">Donate Now</a>
+                            <a href="#projects" class="bg-gray-100 text-gray-800 font-semibold px-8 py-4 rounded-lg hover:bg-gray-200 transition-all border border-gray-300 text-lg">Join a Project</a>
+                        </div>
+                    </div>
+                    <div class="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl bg-black">
+                        <img src="https://placehold.co/600x400/000000/ffffff?text=Hands-on+Action" alt="Volunteers working on a community project" class="w-full h-full object-cover opacity-75">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                    </div>
+                </div>
+                <!-- Proof Metrics -->
+                <div class="mt-16 md:mt-24 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center bg-[#D6EFFF] bg-opacity-30 p-8 rounded-2xl border border-gray-200">
+                    <div>
+                        <p class="text-4xl font-bold text-black">1,200+</p>
+                        <p class="text-gray-800 mt-1">People Served</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold text-black">45</p>
+                        <p class="text-gray-800 mt-1">Projects Funded</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold text-black">8,000+</p>
+                        <p class="text-gray-800 mt-1">Volunteer Hours</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold text-black">92%</p>
+                        <p class="text-gray-800 mt-1">Funds to Programs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Work Section -->
+        <section id="work" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-black">How We Make a Difference</h2>
+                <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">Our initiatives are designed for direct, measurable, and sustainable impact.</p>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <!-- Work Tile -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <h3 class="text-xl font-bold text-black mb-2">Student-Led Community Builds</h3>
+                        <p class="text-gray-700 mb-4">Paradigm Prep students apply their skills to build tech solutions for local non-profits.</p>
+                        <a href="#projects" class="font-semibold text-black hover:underline">See projects →</a>
+                    </div>
+                    <!-- Work Tile -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <h3 class="text-xl font-bold text-black mb-2">Micro-Grants & Essentials</h3>
+                        <p class="text-gray-700 mb-4">We provide targeted funding for critical needs, from school supplies to emergency shelter repairs.</p>
+                        <a href="#projects" class="font-semibold text-black hover:underline">See grants →</a>
+                    </div>
+                    <!-- Work Tile -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <h3 class="text-xl font-bold text-black mb-2">Education-to-Impact Bridge</h3>
+                        <p class="text-gray-700 mb-4">We connect skilled youth with organizations that need them, creating a pipeline of service.</p>
+                        <a href="#get-involved" class="font-semibold text-black hover:underline">Partner with us →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Story -->
+        <section class="py-20 md:py-28 bg-black text-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img src="https://placehold.co/600x450/ffffff/000000?text=Feature+Story" alt="A compelling image from a featured project" class="rounded-2xl shadow-2xl w-full h-full object-cover">
+                    <div class="text-center md:text-left">
+                        <p class="font-semibold" style="color: #F5EEDF;">Featured Story</p>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2">New Laptops for the Community Center</h2>
+                        <blockquote class="my-6 text-xl italic border-l-4 pl-4" style="border-color: #F5EEDF;">
+                            "We went from having two outdated computers to a full lab. The kids are learning to code now. It's life-changing."
+                        </blockquote>
+                        <p class="text-gray-300">A team of four students fundraised, procured, and installed 15 new laptops, impacting over 100 children weekly.</p>
+                        <a href="#stories" class="inline-block mt-6 bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200">Read the full story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-black text-center mb-16">Active & Completed Projects</h2>
+                <!-- Project Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                        <img src="https://placehold.co/500x300/dbeafe/1e3a8a?text=Project+1" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-bold text-lg text-black">Website for Local Food Bank</h3>
+                            <p class="text-sm text-gray-700 mt-1 mb-4 flex-grow">A new, mobile-friendly site to increase donations and volunteer sign-ups.</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                                <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-500">
+                                <span>$2,500 Funded</span>
+                                <span class="font-semibold text-green-700">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                        <img src="https://placehold.co/500x300/fee2e2/991b1b?text=Project+2" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-bold text-lg text-black">Winter Coat Drive</h3>
+                            <p class="text-sm text-gray-700 mt-1 mb-4 flex-grow">Providing 500 new winter coats to children in underserved communities.</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-500">
+                                <span>$7,500 of $10,000</span>
+                                <span class="font-semibold text-blue-700">Active</span>
+                            </div>
+                            <a href="#donate" class="w-full mt-4 text-center bg-[#F5EEDF] text-black font-semibold px-4 py-2 rounded-lg hover:bg-[#EAE1C7]">Give to this project</a>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col">
+                        <img src="https://placehold.co/500x300/dcfce7/14532d?text=Project+3" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-bold text-lg text-black">Community Garden Build</h3>
+                            <p class="text-sm text-gray-700 mt-1 mb-4 flex-grow">Establishing a new community garden to provide fresh produce.</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                                <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-500">
+                                <span>$5,000 Funded</span>
+                                <span class="font-semibold text-green-700">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Dashboard -->
+        <section id="impact" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-black">Our Impact, by the Numbers</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">Radical transparency is a core value. Explore our live financial and impact data.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Impact Card -->
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 flex flex-col justify-center items-center text-center">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Allocation of Funds</h3>
+                        <p class="text-5xl lg:text-6xl font-extrabold text-black">92%</p>
+                        <p class="text-gray-600 mt-2">Goes directly to program services and grants.</p>
+                    </div>
+                     <!-- Impact Card -->
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 flex flex-col justify-center items-center text-center">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Donations this Year</h3>
+                        <p class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black">$142,831</p>
+                        <p class="text-gray-600 mt-2">From 840 individual and corporate donors.</p>
+                    </div>
+                     <!-- Impact Card -->
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 flex flex-col justify-center items-center text-center">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Avg. Time to Delivery</h3>
+                        <p class="text-5xl lg:text-6xl font-extrabold text-black">21 <span class="text-3xl lg:text-4xl font-bold">Days</span></p>
+                        <p class="text-gray-600 mt-2">From donation receipt to funds deployed in the field.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                     <a href="#" class="font-semibold text-black hover:underline">View Annual Reports & 990s →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Get Involved Section -->
+        <section id="get-involved" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-black">Join the Force for Good</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">Your time, skills, and passion can make a world of difference.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-bold">Volunteer Your Time</h3>
+                        <p class="text-gray-700 mt-2 mb-4">Join a local build, contribute your expertise remotely, or help us verify project outcomes.</p>
+                        <a href="#" class="font-semibold text-black hover:underline">See volunteer roles →</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-bold">Become a Partner</h3>
+                        <p class="text-gray-700 mt-2 mb-4">Align your company, school, or foundation with our mission through partnerships and sponsorships.</p>
+                        <a href="#" class="font-semibold text-black hover:underline">Learn about partnerships →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Section -->
+        <section id="donate" class="py-20 md:py-28 bg-black text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-5xl font-bold">Your gift becomes outcomes within weeks—not months.</h2>
+                    <p class="mt-6 text-lg text-gray-300">Monthly donors are our reliability layer. You underwrite speed, stability, and planning power for every project we undertake.</p>
+                    <div class="mt-10 bg-white text-black p-8 rounded-2xl shadow-2xl">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <button class="bg-black text-white font-semibold py-3 rounded-lg">Monthly</button>
+                            <button class="bg-gray-200 text-gray-800 font-semibold py-3 rounded-lg">One-Time</button>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <button class="border-2 border-gray-300 font-bold py-3 rounded-lg hover:border-black hover:bg-gray-100">$25</button>
+                            <button class="border-2 border-black bg-[#D6EFFF] bg-opacity-50 font-bold py-3 rounded-lg">$50</button>
+                            <button class="border-2 border-gray-300 font-bold py-3 rounded-lg hover:border-black hover:bg-gray-100">$100</button>
+                            <button class="border-2 border-gray-300 font-bold py-3 rounded-lg hover:border-black hover:bg-gray-100">Custom</button>
+                        </div>
+                        <a href="#" class="block w-full text-center bg-[#F5EEDF] text-black font-bold text-lg px-6 py-4 rounded-lg hover:bg-[#EAE1C7] transition-all">Donate $50 Monthly</a>
+                        <p class="text-xs text-gray-500 mt-4">Secure payment via Stripe. Cancel anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Elements: Footer -->
+    <footer id="contact" class="bg-[#D6EFFF]">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-black">
+                <div class="col-span-2 lg:col-span-1">
+                    <h3 class="text-xl font-bold">Dreamforce</h3>
+                    <p class="mt-2 text-gray-800 text-sm">A nonprofit building real-world outcomes through sovereign skills, community projects, and targeted micro-grants.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Organization</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#about" class="text-gray-700 hover:text-black">About Us</a></li>
+                        <li><a href="#stories" class="text-gray-700 hover:text-black">Stories</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-black">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Programs</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#work" class="text-gray-700 hover:text-black">Our Work</a></li>
+                        <li><a href="#projects" class="text-gray-700 hover:text-black">Projects</a></li>
+                        <li><a href="#impact" class="text-gray-700 hover:text-black">Impact Dashboard</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Legal</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#terms" class="text-gray-700 hover:text-black">Terms of Service</a></li>
+                        <li><a href="#privacy" class="text-gray-700 hover:text-black">Privacy Policy</a></li>
+                        <li><a href="#ethics" class="text-gray-700 hover:text-black">Ethics</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Connect</h4>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-700 hover:text-black" aria-label="Twitter">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-black" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 12.9,11.2V10.13H10.13V18.5H12.9V13.57C12.9,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 8,5.19 6.88,5.19C5.76,5.19 5.19,6 5.19,6.88A1.68,1.68 0 0,0 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-300 text-center text-gray-600 text-sm">
+                <p>Dreamforce is a 501(c)(3) nonprofit organization. EIN: 12-3456789</p>
+                <p class="mt-1">&copy; 2025 Dreamforce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Persistent CTA Bar (Mobile) -->
+    <div id="mobile-cta-bar" class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-3 border-t border-gray-200 shadow-lg z-30 flex items-center justify-around">
+        <a href="#donate" class="bg-[#F5EEDF] text-black font-semibold w-full text-center px-5 py-3 rounded-lg hover:bg-[#EAE1C7] transition-all shadow-sm">Donate Now</a>
     </div>
-  </section>
 
-  <!-- Vision Section -->
-  <section id="vision" class="py-24 px-6 md:px-20 glass">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-semibold mb-6 gradient-text">Our Vision</h2>
-      <p class="text-lg text-gray-200 mb-8">
-        The Dream Force is a decentralized cultural alliance of builders, artists, and systems thinkers who refuse to accept the decay of meaning. We craft artifacts, awaken nations, and code futures—imbued with truth, taste, and transcendence.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        <div class="p-6 border border-white/10 rounded-lg bg-white/5">
-          <h3 class="text-xl font-bold gradient-text mb-2">🛡 Mythic Sovereignty</h3>
-          <p class="text-gray-300">We preserve ancient codes and build sovereign futures. Culture is our battlefield.</p>
-        </div>
-        <div class="p-6 border border-white/10 rounded-lg bg-white/5">
-          <h3 class="text-xl font-bold gradient-text mb-2">🎨 Creative Renaissance</h3>
-          <p class="text-gray-300">From canvas to code, we channel sacred aesthetics into digital and physical realities.</p>
-        </div>
-        <div class="p-6 border border-white/10 rounded-lg bg-white/5">
-          <h3 class="text-xl font-bold gradient-text mb-2">🔮 Intelligence Unchained</h3>
-          <p class="text-gray-300">We wield AI, art, and spirit to steward the rebirth of Earth through awakened intelligence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Join Section -->
-  <section class="py-24 px-6 md:px-20 text-center">
-    <h2 class="text-4xl md:text-5xl font-semibold mb-4 gradient-text">Join the Force</h2>
-    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">Whether you're a coder, a poet, a warrior or a builder—there’s a seat for you at the roundtable. The Dream Force recruits those aligned with the mission.</p>
-    <a href="mailto:join@thedreamforce.org" class="inline-block px-6 py-3 bg-white/10 border border-white/30 rounded-full text-white hover:bg-white/20 transition">Send Your Signal</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 text-center text-sm text-gray-400">
-    &copy; 2025 The Dream Force. All Rights Reserved. | <a href="https://github.com/sovereignz" class="underline hover:text-white">Built in the dark</a>
-  </footer>
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
